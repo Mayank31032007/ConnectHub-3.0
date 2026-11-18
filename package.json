@@ -1,0 +1,14 @@
+{
+  "name": "connecthub-local",
+  "version": "3.0.0",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install --include=dev && npm install --include=dev --prefix server && npm install --include=dev --prefix client",
+    "dev": "concurrently -k \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "build": "npm install --omit=dev --prefix server && npm install --include=dev --prefix client && npm run build --prefix client",
+    "start": "npm start --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
